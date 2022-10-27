@@ -65,4 +65,16 @@ RETURN (
             where e2.salary > e1.salary
         )
 );
-END
+END -- FUNCTION
+select IFNULL(
+        null,
+        (
+            select distinct salary
+            from employee as e1
+            where 1 = (
+                    select count(distinct(salary))
+                    from employee as e2
+                    where e1.salary < e2.salary
+                )
+        )
+    ) as SecondHighestSalary -- THIS QUERY ALSO HANDLES THE NULL VALUE
