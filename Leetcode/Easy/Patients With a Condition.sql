@@ -44,7 +44,7 @@
  +------------+--------------+--------------+
  Explanation: Bob and George both have a condition that starts with DIAB1.
  */
--- Write your MySQL query statement below
+--\\\ Write your MySQL query statement below
 select patient_id,
     patient_name,
     conditions
